@@ -50,11 +50,11 @@ class TodoList extends Component {
         });
         return (
             <div className="TodoList">
-                <h1>Todo - List</h1>
-                <ul>
+                <h2 className="TodoList-header">TO DO LIST</h2>
+                <TodoForm create={this.create} />
+                <ul className="TodoList-task-list">
                     {todos}
                 </ul>
-                <TodoForm create={this.create} />
             </div>
         )
     }

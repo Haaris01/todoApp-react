@@ -1,8 +1,37 @@
+
 ul {
     list-style-type: none;
-    padding-inline-start: 20px;
 }
 
 li {
-    display: inline
+    display: inline;
 }
+
+.TodoList{
+    border-radius: 8px;
+    max-height: 100%;
+    max-width: 480px;
+    background-color: #10101d;
+    padding: 24px;
+    overflow: auto;
+}
+
+.TodoList-header {
+    font-size: 20px;
+    line-height: 32px;
+    margin: 0 0 12px 0;
+    color: #fff;
+}
+
+.TodoList-task-list{
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+}
+
+
+

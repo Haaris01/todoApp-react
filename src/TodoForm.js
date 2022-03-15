@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { v4 as uuidv4 } from 'uuid';
-
+import './TodoForm.css'
 class TodoForm extends Component {
     constructor(props) {
         super(props);
@@ -28,18 +28,19 @@ class TodoForm extends Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="task">Task : </label>
-                    <input
-                        id="task"
-                        type="text"
-                        name="task"
-                        value={this.state.task}
-                        onChange={this.handleChange}
-                    />
-                    <button>Add Task</button>
-                </form>
+            <div className="TodoForm">
+                    <form onSubmit={this.handleSubmit} className="Todo-add-task">
+                        <input
+                            id="task"
+                            type="text"
+                            name="task"
+                            value={this.state.task}
+                            onChange={this.handleChange}
+                            className="TodoForm-task-input"
+                            placeholder="Add new task"
+                        />
+                        <input className="TodoForm-submit-task" type="submit" value="" onClick={this.handleSubmit}></input>
+                    </form>
             </div>
         )
     }

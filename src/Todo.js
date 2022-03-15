@@ -9,13 +9,13 @@ class Todo extends Component {
             task: this.props.task,
             isCompleted: false,
         }
-        this.handleDone = this.handleDone.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
         this.toggleForm = this.toggleForm.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
         this.handleComplete = this.handleComplete.bind(this);
     }
-    handleDone(evt) {
+    handleDelete(evt) {
         this.props.removeTodo(this.props.id);
     }
     toggleForm() {
@@ -49,19 +49,18 @@ class Todo extends Component {
                 </div>
             )
         } else {
-            result = (<div className="Todo" >
-                <li className={(this.state.isCompleted) ? 'Todo-completed' : 'Todo-not-completed'} >
-                    <input type="checkbox"
-                        className="Todo-checkbox"
-                        onClick={this.handleComplete}
-                    />
-                    <dl>
-                        <dt > {this.props.task} </dt>
-                    </dl>
-                </li>
-                <button onClick={this.toggleForm} > Edit </button>
-                <button onClick={this.handleDone} > Delete </button>
-            </div>
+            result = (
+                <div className="Todo">
+                    <li className="Todo-task-item">
+                        <label className="Todo-task-list-item-label">
+                            <input type="checkbox" onClick={this.handleComplete} />
+                            <span>{this.props.task}</span>
+                        </label>
+                        <span onClick={this.handleDelete} className="Todo-delete-btn"></span>
+                    </li>
+                    {/* <button onClick={this.toggleForm}> Edit </button> */}
+
+                </div>
             )
         }
         return (<div > {result} </div>)
